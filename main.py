@@ -1,4 +1,5 @@
 import requests
+import time
 from get import get
 from listMaker import listMaker
 from csvMaker import csvMaker
@@ -27,6 +28,10 @@ deLab = get(headers,payload,url_devices)
 #se crea una lista especifica de los dispositivos que se necesitan
 listaDeseada = listMaker(deLab,"wireless|wired")
 #se crea un archivo csv de la lista deseada
-csvMaker(listaDeseada)
+
+while True:
+    print("Actualizando...")
+    csvMaker(listaDeseada)
+    time.sleep(300)
 
 
