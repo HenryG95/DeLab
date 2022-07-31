@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  product-services:
+    build: .
+    volumes:
+      - .
+    ports:
+      - 8080:8080
